@@ -21,7 +21,31 @@ var short = "",
 let camOn = true;
 let camToggle;
 
-let img;
+const input = document.querySelector("input")
+const output = document.querySelector("output")
+let imagesArray = []
+
+input.addEventListener("change", function() {
+	const file = input.files
+	imagesArray.push(file[0])
+	displayImages()
+})
+
+function displayImages() {
+	let images = ""
+	imagesArray.forEach((image, i) => {
+	  images += `<div class="image">
+				  <img src="${URL.createObjectURL(image)}" alt="image">
+				  <span onclick="deleteImage(${i})">&times;</span>
+				</div>`
+	})
+	output.innerHTML = images
+  }
+
+  function deleteImage(i) {
+	imagesArray.splice(i, 1)
+	displayImages()
+  }
 
 function preload() {
   //p5 function - this function is automatically called by the p5 library, once only
@@ -53,6 +77,7 @@ function toggleCamera() {
   if (camOn) {
     // create one camera object if camOn is true
     cam = createCapture(VIDEO);
+	cam.hide(); //hide the cam element
   } else {
     cam.remove();
   }

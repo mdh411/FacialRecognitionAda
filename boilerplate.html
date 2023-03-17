@@ -11,11 +11,18 @@
 
 		<style>
 			body {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				gap: 10px;
 				background-color: #a0a0a0;
+				flex-direction: column;
+				height: 100vh;
 				font-family: Arial, Helvetica, sans-serif;
 				font-size: 32px;
 				text-align: center;
 			}
+
 		</style>
 
 	</head>
@@ -25,6 +32,9 @@
 		<div id="video_container"><!-- this will be used to contain the HTML5 canvas element --></div>
 		<div id="gender_results"></div>
 		<div id="hair_results"></div>
+
+		<input type="file" accept="image/jpg">
+		<output></output>
 	</body>
 </html>
 
