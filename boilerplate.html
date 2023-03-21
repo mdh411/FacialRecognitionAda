@@ -2,12 +2,14 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
+		<meta name="viewport" 
+              content="width=device-width,
+                       initial-scale=1.0" />
 		<title>Ada Module: Artificial Intelligence</title>
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.min.js"></script>
 		<script src="https://unpkg.com/ml5@0.4.3/dist/ml5.min.js"></script>
-		<script src="./services.js"></script>
 
 		<style>
 			body {
@@ -29,12 +31,21 @@
 
 	<body>
 		<div>Image Classification Boilerplate</div>		
-		<div id="video_container"><!-- this will be used to contain the HTML5 canvas element --></div>
-		<div id="gender_results"></div>
-		<div id="hair_results"></div>
+		<!-- <div id="video_container">this will be used to contain the HTML5 canvas element</div> -->
 
-		<input type="file" accept="image/jpg">
-		<output></output>
+		</br>
+		<img src="" alt="" id="image" 
+			width="178px" height="218px" />
+		</br></br>
+		<input type="file" accept="image/jpg, image/jpeg, image/png" 
+			onchange="loadFile(event)" 
+			name="image" id="file" />
+
+		<div id="gender_results"></div>
+		<div id="bald_results"></div>
+		<div id="colour_results"></div>
+		<div id="age_results"></div>
+
+		<script src="./services.js"></script>
 	</body>
 </html>
-
